@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firechat-e6c45": {
+      "hosting": {
+        "fireChat": [
+          "firechat-e6c45"
+        ]
+      }
+    }
+  }
+}
