@@ -14,10 +14,24 @@ import { map } from 'rxjs/operators';
 export class ChatService {
   
   private itemsCollection: AngularFirestoreCollection<Mensaje>;
-  public chats: Mensaje[]=[];
+  public chats: Mensaje[] = [];
+  public usuario: any = {}
 
   constructor(private afs: AngularFirestore,
-              public auth: AngularFireAuth) { }
+              public auth: AngularFireAuth) {
+                
+                this.auth.authState.subscribe( user => {
+                  
+                  console.log('estado del usuario ', user);
+                  if( !user ){
+                    return ;
+                  }
+                  this.usuario.nombre = user.displayName;
+                  this.usuario.uid = user.uid;
+                  
+                });
+
+              }
 
   cargarMensajes(){
     this.itemsCollection = this.afs.collection<Mensaje>('chats', referencia => referencia.orderBy('fecha', 'desc').limit(5));
