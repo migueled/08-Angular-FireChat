@@ -8,13 +8,22 @@ import { ChatService } from '../../providers/chat.service';
   ]
 })
 export class ChatComponent implements OnInit {
+
   mensaje:string="";
-  
+  elemento : any;
+
   constructor( public _cs:ChatService ) {
-    this._cs.cargarMensajes().subscribe();
+    this._cs.cargarMensajes().subscribe( () => {
+      
+      setTimeout(() => {
+        this.elemento.scrollTop = this.elemento.scrollHeight;
+      }, 20);
+      
+    } );
   }
 
   ngOnInit(): void {
+    this.elemento = document.getElementById('app-mensajes');
   }
 
   enviarMensaje(){
