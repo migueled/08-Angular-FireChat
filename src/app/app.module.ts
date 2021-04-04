@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { ChatComponent } from './componenets/chat/chat.component';
 
 import { FormsModule } from '@angular/forms';
+import { ChatService } from './providers/chat.service';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     AngularFireAnalyticsModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
