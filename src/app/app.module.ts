@@ -10,13 +10,16 @@ import { environment } from '../environments/environment';
 import { ChatComponent } from './componenets/chat/chat.component';
 
 import { FormsModule } from '@angular/forms';
+
 import { ChatService } from './providers/chat.service';
+import { LoginComponent } from './componenets/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
