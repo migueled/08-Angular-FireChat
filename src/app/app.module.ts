@@ -16,21 +16,22 @@ import { LoginComponent } from './componenets/login/login.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ChatComponent,
-    LoginComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAnalyticsModule,
-    AngularFirestoreModule
-  ],
-  providers: [
-    ChatService
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ChatComponent,
+        LoginComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFireAnalyticsModule,
+        AngularFirestoreModule
+    ],
+    providers: [
+        ChatService
+    ],
+    bootstrap: [AppComponent]
 })
+
 export class AppModule { }
